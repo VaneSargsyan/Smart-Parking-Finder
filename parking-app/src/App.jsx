@@ -93,7 +93,7 @@ export default function App() {
 
   // LOAD FROM BACKEND
   useEffect(() => {
-    fetch("http://localhost:5000/parkings")
+    fetch("https://smart-parking-finder-aq92.onrender.com/parkings")
       .then((res) => res.json())
       .then((data) => setParkings(data));
   }, []);
@@ -154,7 +154,7 @@ export default function App() {
 
   // 🔴 TAKE (BACKEND)
   const takeSpot = async (id) => {
-    const res = await fetch(`http://localhost:5000/parkings/${id}/take`, {
+    const res = await fetch(`https://smart-parking-finder-aq92.onrender.com/parkings/${id}/take`,  {
       method: "POST",
     });
     const data = await res.json();
@@ -163,7 +163,7 @@ export default function App() {
 
   // 🟢 FREE (BACKEND)
   const freeSpot = async (id) => {
-    const res = await fetch(`http://localhost:5000/parkings/${id}/free`, {
+    const res = await fetch(`https://smart-parking-finder-aq92.onrender.com/parkings/${id}/free`, {
       method: "POST",
     });
     const data = await res.json();
